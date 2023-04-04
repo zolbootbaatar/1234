@@ -2,6 +2,9 @@ import React from 'react';
 import { DefaultPlayer as Video } from 'react-html5video/dist';
 import { Player } from 'video-react';
 import ReactPlayer from 'react-player'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck, faCar, faUser } from '@fortawesome/free-solid-svg-icons'
+
 
 const people = [
       {
@@ -47,9 +50,16 @@ export default function Example() {
             // columns-3 --> 3 egnee bolgono grid --> display: grid; grid-cols-5 --> neg egneend hed bhyg helne
             <div className='container mx-auto bg-zinc-900'>
                   <div className='py-1 inline-grid gap-10 grid-cols-3'>
-                        <button className='text-slate-100 border-2 border-slate-600 px-2'>All</button>
-                        <button className='text-slate-100 border-2 border-slate-600 px-2'>People</button>
-                        <button className='text-slate-100 border-2 border-slate-600 px-2'>Vehicles</button>
+                        {/* <button className='text-slate-100 border-2 border-slate-600 px-2'>All</button> */}
+                        <button className='text-slate-100 border-2 border-slate-600 px-2 focus:bg-slate-600'>
+                              <FontAwesomeIcon icon={faCheck} /> All
+                        </button>
+                        <button className='text-slate-100 border-2 border-slate-600 px-2 focus:bg-slate-600'>
+                              <FontAwesomeIcon icon={faUser} /> People
+                        </button>
+                        <button className='text-slate-100 border-2 border-slate-600 px-2 focus:bg-slate-600'>
+                              <FontAwesomeIcon icon={faCar} /> Vehicles
+                        </button>
                   </div>
                   <div className='py-1 inline-grid gap-4 grid-cols-10 
                   max-md:grid-cols-3 max-lg:grid-cols-6'>

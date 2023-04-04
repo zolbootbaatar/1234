@@ -17,8 +17,8 @@ function SearchComponent() {
   };
 
   return (
-    <div className='bg-zinc-700 grid grid-cols-10 p-0
-    col-start-4 col-span-4 m-1 max-md:col-start-5 max-md:col-span-3
+    <div className='bg-zinc-700 grid grid-cols-10 p-0 m-2
+    col-start-4 col-span-4 max-md:col-start-5 max-md:col-span-3
     rounded-3xl text-slate-200'>
       <input type="text" value={searchText}
       placeholder='Search'

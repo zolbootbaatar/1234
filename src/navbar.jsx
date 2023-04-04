@@ -1,5 +1,7 @@
 import React from 'react'
 import SearchComponent from './search'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleQuestion, faDesktop, faCircleUser } from '@fortawesome/free-solid-svg-icons'
 
 export default function Navbar() {
   return (
@@ -24,9 +26,9 @@ export default function Navbar() {
       <ul className='grid 
             col-start-10 grid-cols-3 max-md:col-start-8 max-md:col-span-4 max-lg:col-start-9 max-lg:col-span-2
             bg-zinc-800 p-2 m-2 flex font-bold text-slate-100'>
-            <li>1</li>
-            <li>2</li>
-            <li>A</li>
+            <li><button><FontAwesomeIcon icon={faCircleQuestion} /></button></li>
+            <li><button><FontAwesomeIcon icon={faDesktop} /></button></li>
+            <li><button><FontAwesomeIcon icon={faCircleUser} /></button></li>
       </ul>
     </div>
   )
