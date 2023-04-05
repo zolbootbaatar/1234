@@ -8,29 +8,30 @@ function SearchComponent() {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(`https://example.com/search?q=${searchText}`);
+      const response = await fetch(`https://demo.dataverse.org/api/search?q=${searchText}`);
       const data = await response.json();
-      setSearchResults(data.results);
+      console.log(data.data.items)
+      setSearchResults(data.result);
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div className='bg-zinc-700 grid grid-cols-10 p-0 m-2
+    <div className='bg-zinc-300 dark:bg-zinc-700 grid grid-cols-10 p-0 m-2
     col-start-4 col-span-4 max-md:col-start-5 max-md:col-span-3
     rounded-3xl text-slate-200'>
       <input type="text" value={searchText}
       placeholder='Search'
-      className='bg-zinc-700 p-2
+      className='bg-zinc-300 dark:bg-zinc-700 p-2
       col-start-1 col-span-9 max-md:col-start-1 max-md:col-span-7
       rounded-3xl text-slate-200'
       onChange={(e) => setSearchText(e.target.value)} />
       <button
-    //   className='pl-20'
-        onClick={handleSearch}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+          onClick={handleSearch}><FontAwesomeIcon icon={faMagnifyingGlass} />
+      </button>
       <ul>
-        {searchResults.map((result) => (
+        {searchResults && searchResults.map((result) => (
           <li key={result.id}>{result.title}</li>
         ))}
       </ul>
